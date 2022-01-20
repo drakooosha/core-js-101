@@ -212,14 +212,10 @@ function getRectangleString(width, height) {
   for (let i = 0; i < height; i += 1) {
     if (i === 0) {
       result += `┌${'─'.repeat(width - 2)}┐\n`;
-    }
-    else {
-      if(i === height - 1) {
-        result += `└${'─'.repeat(width - 2)}┘\n`;
-      }
-      else {
-        result += `│${' '.repeat(width - 2)}│\n`;
-      }
+    } else if (i === height - 1) {
+      result += `└${'─'.repeat(width - 2)}┘\n`;
+    } else {
+      result += `│${' '.repeat(width - 2)}│\n`;
     }
   }
   return result;
@@ -244,21 +240,16 @@ function getRectangleString(width, height) {
  */
 function encodeToRot13(str) {
   let result = '';
-  for(let i = 0; i < str.length; i++) {
-    if(str[i].toUpperCase() != str[i].toLowerCase()) {
-      if(str[i].charCodeAt(0) >= 97 && str[i].charCodeAt(0) + 13 > 122) {
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i].toUpperCase() !== str[i].toLowerCase()) {
+      if (str[i].charCodeAt(0) >= 97 && str[i].charCodeAt(0) + 13 > 122) {
         result += String.fromCharCode(str[i].charCodeAt(0) - 13);
+      } else if (str[i].charCodeAt(0) <= 90 && str[i].charCodeAt(0) + 13 > 90) {
+        result += String.fromCharCode(str[i].charCodeAt(0) - 13);
+      } else {
+        result += String.fromCharCode(str[i].charCodeAt(0) + 13);
       }
-      else {
-        if(str[i].charCodeAt(0) <= 90 && str[i].charCodeAt(0) + 13 > 90) {
-          result += String.fromCharCode(str[i].charCodeAt(0) - 13);
-        }
-        else {
-          result += String.fromCharCode(str[i].charCodeAt(0) + 13);
-        }
-      }
-    }
-    else {
+    } else {
       result += str[i];
     }
   }
