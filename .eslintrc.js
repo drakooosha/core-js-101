@@ -16,7 +16,7 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": 0,
     "eqeqeq": "off",
     'no-plusplus': [2, { allowForLoopAfterthoughts: true }],
     'keyword-spacing': ["off"],
