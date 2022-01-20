@@ -17,11 +17,11 @@ module.exports = {
   },
   rules: {
     "linebreak-style": 0,
-    "eqeqeq": ["off"],
+    "eqeqeq": 0,
     'no-plusplus': [2, { allowForLoopAfterthoughts: true }],
-    'keyword-spacing': ["off"],
-    'brace-style': ["off"],
-    'no-lonely-if': ["off"],
-    'valid-typeof': ["off"]
+    'keyword-spacing': 0,
+    'brace-style': 0,
+    'no-lonely-if': 0,
+    'valid-typeof': 0
   },
 };
