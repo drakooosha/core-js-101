@@ -16,5 +16,12 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
+    "linebreak-style": ["error", "windows"],
+    "eqeqeq": "off",
+    'no-plusplus': [2, { allowForLoopAfterthoughts: true }],
+    'keyword-spacing': ["off"],
+    'brace-style': ["off"],
+    'no-lonely-if': ["off"],
+    'valid-typeof': ["off"]
   },
 };
